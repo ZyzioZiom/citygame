@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150627155756) do
+ActiveRecord::Schema.define(version: 20150627171432) do
 
   create_table "activities", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,15 +19,16 @@ ActiveRecord::Schema.define(version: 20150627155756) do
   end
 
   create_table "beacons", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "name"
     t.text     "description"
-    t.integer  "beacon_id2"
-    t.integer  "beacon_id3"
+    t.integer  "major"
+    t.integer  "minor"
     t.string   "beacon_mac"
-    t.string   "beacon_id1"
+    t.string   "proximity_uid"
     t.integer  "user_id"
+    t.string   "unique_id"
   end
 
   create_table "games", force: :cascade do |t|

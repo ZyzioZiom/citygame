@@ -1,15 +1,13 @@
 class Beacon < ActiveRecord::Base
 
-  attr_reader :id1, :id2, :id3
+  attr_reader :unique_id
   
   def initialize(params)
-    @id1 = params[:beacon_id1]
-    @id2 = params[:beacon_id2]
-    @id3 = params[:beacon_id3]
+    @unique_id = params[:uid]
   end
   
   def recognize
-    beacon = Beacon.where(beacon_id1: id1, beacon_id2: id2, beacon_id3: id3).first
+    beacon = Beacon.where(unique_id: unique_id).first
     
     if beacon.nil?
       data = {

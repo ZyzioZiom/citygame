@@ -3,15 +3,16 @@
 <% @beacons.each do |beacon| %>
 Beacon name: <%= beacon.name %>
 <br>
-Beacon id1: <%= beacon.beacon_id1 %>
+Beacon unique id: <%= beacon.unique_id %>
 <br>
-Beacon id2: <%= beacon.beacon_id2 %>
+Beacon proximity: <%= beacon.proximity_uid %>
 <br>
-Beacon id3: <%= beacon.beacon_id3 %>
+Beacon major: <%= beacon.major %>
+<br>
+Beacon minor: <%= beacon.minor %>
 <br>
 Beacon MAC: <%= beacon.beacon_mac %>
 <br>
 Beacon User id: <%= beacon.user_id %>
 <hr>
-
 <% end %>
