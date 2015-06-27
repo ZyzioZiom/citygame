@@ -1,1 +1,12 @@
-<h1>Beacons#index</h1>
+<h1>Beacons:</h1>
+
+<% @beacons.each do |beacon| %>
+Beacon id1: <%= beacon.beacon_id1 %>
+<br>
+Beacon id2: <%= beacon.beacon_id2 %>
+<br>
+Beacon id3: <%= beacon.beacon_id3 %>
+<br>
+Beacon MAC: <%= beacon.beacon_mac %>
+<hr>
+<% end %>

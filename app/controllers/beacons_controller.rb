@@ -1,7 +1,7 @@
 class BeaconsController < ApplicationController
   
   def index
-  
+    @beacons = Beacon.all
   end
   
   def show
