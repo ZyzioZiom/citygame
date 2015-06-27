@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150627201935) do
+ActiveRecord::Schema.define(version: 20150627211120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 20150627201935) do
     t.datetime "updated_at",    null: false
     t.integer  "attacker_id"
     t.integer  "defender_id"
-    t.time     "attacker_time"
-    t.time     "defender_time"
     t.integer  "winner"
+    t.integer  "attacker_time"
+    t.integer  "defender_time"
   end
 
   create_table "places", force: :cascade do |t|

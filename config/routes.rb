@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # start new game
   post 'games/start' => 'games#start'
   
-  
+  post 'games/send_time' => 'games#send_time'
   
   
   # Example of regular route:

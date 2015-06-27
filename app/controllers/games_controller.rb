@@ -25,7 +25,7 @@ class GamesController < ApplicationController
     end
     
       
-    game.update(attacker_time: params[:attacker_time], defender_time: nil, winner: winner)
+    game.update(attacker_time: params[:attacker_time], defender_time: 0, winner: winner)
     
     
     data = {
