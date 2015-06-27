@@ -16,11 +16,22 @@ class GamesController < ApplicationController
     game = Game.find(params[:game_id])
     
     # zakładamy że drugi gracz się nie broni i atakujący wygrywa
-    game.update(attacker_time: params[:attacker_time], defender_time: nil, winner: self.attacker_id)
+    winner = nil
+    
+    if params[:attacker_time] == 0
+      winner = game.defender_id
+    else
+      winner = game.attacker_id
+    end
+    
+      
+    game.update(attacker_time: params[:attacker_time], defender_time: nil, winner: winner)
+    
     
     data = {
-      code: 200
-      winner: game.winner
+      code: 200,
+      winner: game.winner,
+      attacker_time: game.attacker_time
       }
     
     render json: data
