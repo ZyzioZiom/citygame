@@ -28,6 +28,15 @@ test:
   pool: 5
   username: postgres
   password: postgres
+  
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: ec2-54-227-249-165.compute-1.amazonaws.com
+  database: dejrljf57hdp4c
+  pool: 5
+  username: rywovksqtnyrvt
+  password: ugnLIHkPqLC-DW1vaxymhqogmY
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

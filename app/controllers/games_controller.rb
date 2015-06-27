@@ -14,5 +14,6 @@ class GamesController < ApplicationController
   
   def send_result
     # send result 
+  end
   
 end
