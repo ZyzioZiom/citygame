@@ -20,6 +20,7 @@ class Beacon < ActiveRecord::Base
         status: "Beacon recognized",
         name: beacon.name,
         description: beacon.description
+        user_id: beacon.user_id
         }
     end
     

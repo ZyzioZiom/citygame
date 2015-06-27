@@ -26,6 +26,8 @@ class GamesController < ApplicationController
     render json: data
   end
   
+  
+  # not used
   def request_result(game_id)
     # send result to player after defender finished his turn and players request result
     game = Game.find(game_id)
