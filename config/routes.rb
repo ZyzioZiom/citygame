@@ -6,8 +6,17 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'home#index'
 
+  # find info about particular beacon
   post 'beacons/show' => 'beacons#show'
+  
+  # list beacons
   get 'beacons' => 'beacons#index'
+  
+  # start new game
+  post 'games/start' => 'games#start'
+  
+  
+  
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
