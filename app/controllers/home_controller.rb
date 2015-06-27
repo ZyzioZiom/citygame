@@ -5,4 +5,8 @@ class HomeController < ApplicationController
     
   end
   
+  def last_games
+    
+  end
+  
 end

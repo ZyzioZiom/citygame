@@ -1,6 +1,10 @@
 class GamesController < ApplicationController
   skip_before_action :verify_authenticity_token
   
+  def index
+    @games = Game.order(created_at: :desc)
+  end
+  
   def start
     # initiate game as attacker
     new_game = Game.create(attacker_id: params[:attacker_id], defender_id: params[:defender_id])
