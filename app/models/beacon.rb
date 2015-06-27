@@ -19,13 +19,13 @@ class Beacon < ActiveRecord::Base
     else
       data = {
         code: 200,
-        status: "Beacon recognized"
-        name: beacon.name
+        status: "Beacon recognized",
+        name: beacon.name,
         description: beacon.description
         }
     end
     
-    render json: data
+    data
   
   rescue => e
     data = {
@@ -33,6 +33,6 @@ class Beacon < ActiveRecord::Base
       status: "Error recognizing beacon: #{e.class} - #{e.message}"
       }
     
-    render json: data
+    data
   end
 end

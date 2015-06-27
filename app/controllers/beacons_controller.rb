@@ -8,16 +8,8 @@ class BeaconsController < ApplicationController
   def show
     # tutaj zwraca informacje o danym beaconie
     beacon = Beacon.new(params)
-    @beacon = beacon.recognize
     
-#    @beacon = Beacon.where(beacon_id1: params[:beacon_id1], beacon_id2: params[:beacon_id2], beacon_id3: params[:beacon_id3]).first
-#    # zakładamy że beacon to user
-##    @user = User.where(beacon_id: params[:id]).first
-#    
-    data = {
-      name: @beacon.name,
-      description: @beacon.description
-      }
+    data = beacon.recognize
     
     render json: data
   end
