@@ -7,9 +7,8 @@ class BeaconsController < ApplicationController
   
   def show
     # tutaj zwraca informacje o danym beaconie
-    beacon = Beacon.new(params)
     
-    data = beacon.recognize
+    data = Beacon.recognize(params)
     
     render json: data
   end
