@@ -31,6 +31,7 @@ class GamesController < ApplicationController
     data = {
       code: 200,
       winner: game.winner,
+      winner_name: User.find(game.winner).avatar_name,
       attacker_time: game.attacker_time
       }
     
