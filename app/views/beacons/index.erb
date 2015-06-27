@@ -1,6 +1,8 @@
 <h1>Beacons:</h1>
 
 <% @beacons.each do |beacon| %>
+Beacon name: <%= beacon.name %>
+<br>
 Beacon id1: <%= beacon.beacon_id1 %>
 <br>
 Beacon id2: <%= beacon.beacon_id2 %>
@@ -8,5 +10,8 @@ Beacon id2: <%= beacon.beacon_id2 %>
 Beacon id3: <%= beacon.beacon_id3 %>
 <br>
 Beacon MAC: <%= beacon.beacon_mac %>
+<br>
+Beacon User id: <%= beacon.user_id %>
 <hr>
+
 <% end %>

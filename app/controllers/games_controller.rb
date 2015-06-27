@@ -12,4 +12,7 @@ class GamesController < ApplicationController
     render json: data
   end
   
+  def send_result
+    # send result 
+  
 end
