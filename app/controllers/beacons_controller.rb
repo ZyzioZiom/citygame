@@ -12,5 +12,11 @@ class BeaconsController < ApplicationController
     @beacon = Beacon.where(beacon_id: params[:id]).first
     # zakładamy że beacon to user
 #    @user = User.where(beacon_id: params[:id]).first
+    
+    data = {
+      beacon_id: @beacon_id
+      }
+    
+    render json: data
   end
 end
