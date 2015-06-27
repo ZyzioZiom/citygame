@@ -6,6 +6,10 @@ class Beacon < ActiveRecord::Base
     @unique_id = params[:uid]
   end
   
+  def self.create
+    self.create(params)
+  end
+  
   def recognize
     beacon = Beacon.where(unique_id: unique_id).first
     
