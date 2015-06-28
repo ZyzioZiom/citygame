@@ -8,7 +8,10 @@
   <% if people.include? name %>
 <tr>
   <td style="padding:20px; border-bottom: 2px solid black;"><h1><%= game.created_at.strftime('%H:%M') %></h1></td>
-  <td style="padding:20px; border-bottom: 2px solid black;"><h2>Przyszedł <%= name %></td>
+  <td style="padding:20px; border-bottom: 2px solid black;"><h2>Przyszedł <%= name %></h2>
+    <br>
+    <%= User.find(game.attacker_id).avatar_description %>
+  </td>
   </tr>
   <% end %>
 <% end %>
