@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   def index
     @games = Game.order(created_at: :desc)
     
+    
   rescue => e
     data = {
       class: e.class,
@@ -14,7 +15,16 @@ class HomeController < ApplicationController
   end
   
   def last_games
+    @games = Game.order(created_at: :desc)
     
+  rescue => e
+    data = {
+      class: e.class,
+      message: e.message
+      }
+    
+    render json: data
+  
   end
   
 end

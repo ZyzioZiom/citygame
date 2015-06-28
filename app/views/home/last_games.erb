@@ -1,0 +1,17 @@
+<h1>Last games</h1>
+
+<table>
+<% @games.each do |game| %>
+<tr>
+  <td style="padding:30px;">
+  <%= game.created_at %>
+  </td>
+  <td style="padding:30px;">
+  <%= User.find(game.attacker_id).avatar_name %> vs 
+  <%= User.find(game.defender_id).avatar_name %>
+  </td>
+  
+  
+  </tr>
+<% end %>
+</table>

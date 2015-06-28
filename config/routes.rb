@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   
   post 'games/send_time' => 'games#send_time'
   
+  get '/last_games' => 'home#last_games'
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
