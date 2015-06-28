@@ -3,8 +3,7 @@ class HomeController < ApplicationController
   
   def index
     @games = Game.order(created_at: :desc)
-    
-    
+
   rescue => e
     data = {
       class: e.class,

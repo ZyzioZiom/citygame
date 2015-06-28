@@ -3,11 +3,14 @@
 <table style="display:inline">
   <% people = [] %>
 <% @games.each do |game| %>
+  <% people.push(User.find(game.attacker_id).avatar_name) %>
+  <% name = User.find(game.attacker_id).avatar_name %>
+  <% if people.include? name %>
 <tr>
   <td style="padding:20px; border-bottom: 2px solid black;"><h1><%= game.created_at.strftime('%H:%M') %></h1></td>
-  <td style="padding:20px; border-bottom: 2px solid black;"><h2>Przyszedł <%= User.find(game.attacker_id).avatar_name %></td>
+  <td style="padding:20px; border-bottom: 2px solid black;"><h2>Przyszedł <%= name %></td>
   </tr>
-  <% people.push(User.find(game.attacker_id).avatar_name) %>
+  <% end %>
 <% end %>
 </table>
 
