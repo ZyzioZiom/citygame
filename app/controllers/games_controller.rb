@@ -1,9 +1,6 @@
 class GamesController < ApplicationController
   skip_before_action :verify_authenticity_token
   
-  def index
-    
-  end
   
   def start
     # initiate game as attacker
@@ -14,34 +11,48 @@ class GamesController < ApplicationController
       }
     
     render json: data
+    
+  rescue => e
+  data = {
+    class: e.class,
+    message: e.message
+    }
+
+  render json: data
   end
   
   def send_time
-#    game = Game.find(params[:game_id])
-#    
-#    # zakładamy że drugi gracz się nie broni i atakujący wygrywa
-#    winner = nil
-#    
-#    if params[:attacker_time] == 0
-#      winner = game.defender_id
-#    else
-#      winner = game.attacker_id
-#    end
-#    
-#      
-#    game.update(attacker_time: params[:attacker_time], defender_time: 0, winner: winner)
-#    
-#    
-#    data = {
-#      code: 200,
-#      winner: game.winner,
-#      winner_name: User.find(game.winner).avatar_name,
-#      attacker_time: game.attacker_time
-#      }
-#    
-#    render json: data
+    game = Game.find(params[:game_id])
     
-    return 200
+    # zakładamy że drugi gracz się nie broni i atakujący wygrywa
+    winner = nil
+    
+    if params[:attacker_time] == 0
+      winner = game.defender_id
+    else
+      winner = game.attacker_id
+    end
+    
+      
+    game.update(attacker_time: params[:attacker_time], defender_time: 0, winner: winner)
+    
+    
+    data = {
+      code: 200,
+      winner: game.winner,
+      winner_name: User.find(game.winner).avatar_name,
+      attacker_time: game.attacker_time
+      }
+    
+    render json: data
+    
+  rescue => e
+    data = {
+      class: e.class,
+      message: e.message
+      }
+    
+    render json: data
   end
   
   
