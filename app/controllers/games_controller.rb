@@ -17,29 +17,31 @@ class GamesController < ApplicationController
   end
   
   def send_time
-    game = Game.find(params[:game_id])
+#    game = Game.find(params[:game_id])
+#    
+#    # zakładamy że drugi gracz się nie broni i atakujący wygrywa
+#    winner = nil
+#    
+#    if params[:attacker_time] == 0
+#      winner = game.defender_id
+#    else
+#      winner = game.attacker_id
+#    end
+#    
+#      
+#    game.update(attacker_time: params[:attacker_time], defender_time: 0, winner: winner)
+#    
+#    
+#    data = {
+#      code: 200,
+#      winner: game.winner,
+#      winner_name: User.find(game.winner).avatar_name,
+#      attacker_time: game.attacker_time
+#      }
+#    
+#    render json: data
     
-    # zakładamy że drugi gracz się nie broni i atakujący wygrywa
-    winner = nil
-    
-    if params[:attacker_time] == 0
-      winner = game.defender_id
-    else
-      winner = game.attacker_id
-    end
-    
-      
-    game.update(attacker_time: params[:attacker_time], defender_time: 0, winner: winner)
-    
-    
-    data = {
-      code: 200,
-      winner: game.winner,
-      winner_name: User.find(game.winner).avatar_name,
-      attacker_time: game.attacker_time
-      }
-    
-    render json: data
+    return 200
   end
   
   
