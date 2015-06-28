@@ -27,7 +27,7 @@ class GamesController < ApplicationController
     # zakładamy że drugi gracz się nie broni i atakujący wygrywa
     winner = nil
     
-    if params[:attacker_time] == 0
+    if params[:attacker_time].to_i == 0
       winner = game.defender_id
     else
       winner = game.attacker_id

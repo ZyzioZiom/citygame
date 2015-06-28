@@ -3,7 +3,7 @@
 <table>
 <% @games.each do |game| %>
 <tr>
-  <td style="padding:20px; border-bottom: 2px solid black;"><h1><%= game.created_at.strftime('%H:%m') %></h1></td>
+  <td style="padding:20px; border-bottom: 2px solid black;"><h1><%= game.created_at %></h1></td>
   <td style="padding:20px; border-bottom: 2px solid black;"><h2>Przyszedł <%= User.find(game.attacker_id).avatar_name %></td>
   </tr>
 <% end %>
